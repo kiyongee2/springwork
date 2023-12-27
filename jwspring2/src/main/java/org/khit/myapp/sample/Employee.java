@@ -1,0 +1,12 @@
+package org.khit.myapp.sample;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor  //기본 생성자(매개변수가 없는 생성자)
+@Component  //@Controller, @Repository, @Service의 부모
+public class Employee {
+  
+}
