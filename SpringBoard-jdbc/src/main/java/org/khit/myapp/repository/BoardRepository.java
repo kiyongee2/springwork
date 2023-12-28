@@ -83,4 +83,38 @@ public class BoardRepository {
 		}
 		return board;
 	}
+
+	public void delete(Long id) {
+		conn = JDBCUtil.getConnection();
+		String sql = "delete from boards where id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, id);
+			//실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+	}
+
+	public void update(BoardDTO board) {
+		conn = JDBCUtil.getConnection();
+		String sql = "update boards set boardtitle=?, boardcontent=? "
+				+ "where id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getBoardTitle());
+			pstmt.setString(2, board.getBoardContent());
+			pstmt.setLong(3, board.getId());
+			//실행
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt);
+		}
+		
+	}
 }

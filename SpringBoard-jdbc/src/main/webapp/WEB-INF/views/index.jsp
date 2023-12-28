@@ -14,7 +14,7 @@
 			<img src="/resources/images/bear.jpg" alt="곰인형">
 		</div>
 		<div class="menu">
-			<a href="/board/write">글쓰기</a>&nbsp;&nbsp;&nbsp;
+			<!-- <a href="/board/write">글쓰기</a>&nbsp;&nbsp;&nbsp; -->
 			<a href="/board/list">글목록</a>&nbsp;&nbsp;&nbsp;
 			<a href="/user/join">회원가입</a>&nbsp;&nbsp;&nbsp;
 			<a href="/user/login">로그인</a>&nbsp;&nbsp;&nbsp;

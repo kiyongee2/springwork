@@ -13,19 +13,19 @@
 		<form action="/user/login" method="post">
 			<table class="tbl_login">
 				<tr>
+				    <td><label>아이디</label></td>
 					<td>
-					    <label>아이디</label>
 						<input type="text" name="userId" placeholder="아이디">
 					</td>
 				</tr>
 				<tr>
+				    <td><label>비밀번호</label></td>
 					<td>
-					    <label>비밀번호</label>
 						<input type="password" name="userPasswd" placeholder="비밀번호">
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<td colspan="2">
 						<input type="submit" value="로그인">
 						<input type="reset" value="취소">
 					</td>

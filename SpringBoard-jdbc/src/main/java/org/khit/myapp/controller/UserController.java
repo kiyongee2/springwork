@@ -54,4 +54,11 @@ public class UserController {
 			return "/user/login";
 		}
 	}
+	
+	//肺弊酒眶 贸府
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();  //葛电 技记 昏力
+		return "redirect:/";
+	}
 }

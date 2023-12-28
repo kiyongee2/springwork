@@ -13,31 +13,31 @@
 		<form action="/user/join" method="post">
 		<table class="tbl_join">
 			<tr>
+			   <td><label>아이디</label></td>
 				<td>
-				    <label>아이디</label>
 					<input type="text" name="userId" placeholder="아이디">
 				</td>
 			</tr>
 			<tr>
+			    <td> <label>비밀번호</label></td>
 				<td>
-				    <label>비밀번호</label>
 					<input type="password" name="userPasswd" placeholder="비밀번호">
 				</td>
 			</tr>
 			<tr>
+			    <td><label>이름</label></td>
 				<td>
-				    <label>이름</label>
 					<input type="text" name="userName" placeholder="이름">
 				</td>
 			</tr>
 			<tr>
+			    <td><label>나이</label></td>
 				<td>
-				    <label>나이</label>
 					<input type="text" name="userAge" placeholder="나이">
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<input type="submit" value="등록">
 					<input type="reset" value="취소">
 				</td>

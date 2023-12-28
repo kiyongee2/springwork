@@ -19,7 +19,7 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="boardWriter" placeholder="글쓴이">
+					<input type="text" name="boardWriter" value="${sessionId}">
 				</td>
 			</tr>
 			<tr>

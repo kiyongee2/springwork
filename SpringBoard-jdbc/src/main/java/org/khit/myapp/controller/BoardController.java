@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,7 +34,8 @@ public class BoardController {
 	
 	//글쓰기 처리
 	@PostMapping("/write")
-	public String write(BoardDTO boardDTO) {
+	public String write(@ModelAttribute BoardDTO boardDTO) {
+		//@RequestParam("boardTitle") String boardTitle
 		log.info("boardDTO=" + boardDTO);
 		boardService.save(boardDTO);
 		return "redirect:/board/list";  //response.sendRedirect()
@@ -56,6 +58,30 @@ public class BoardController {
 		BoardDTO boardDTO = boardService.findById(id);
 		model.addAttribute("board", boardDTO);
 		return "/board/detail";
+	}
+	
+	//글 삭제 처리
+	@GetMapping("/delete")
+	public String delete(@RequestParam("id") Long id) {
+		boardService.delete(id);
+		return "redirect:/board/list";
+	}
+	
+	//글 수정 페이지
+	@GetMapping("/update")
+	public String update(@RequestParam("id") Long id,
+			Model model) {
+		//수정할 해당 글 가져오기
+		BoardDTO boardDTO = boardService.findById(id);
+		model.addAttribute("board", boardDTO);
+		return "/board/update";  //update.jsp
+	}
+	
+	//글 수정 처리
+	@PostMapping("/update")
+	public String update(@ModelAttribute BoardDTO boardDTO) {
+		boardService.update(boardDTO);
+		return "redirect:/board/list";
 	}
 	
 }
