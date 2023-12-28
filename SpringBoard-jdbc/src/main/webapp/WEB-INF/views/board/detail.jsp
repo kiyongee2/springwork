@@ -4,38 +4,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글쓰기 폼...</title>
+<title>글 상세보기...</title>
 <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
 	<div id="content">
-		<h2>글쓰기</h2>
-		<form action="/board/write" method="post">
+		<h2>글 상세보기</h2>
 		<table class="tbl_write">
 			<tr>
 				<td>
-					<input type="text" name="boardTitle" placeholder="글제목">
+					<input type="text" name="boardTitle" 
+						value="${board.boardTitle}" readonly>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="boardWriter" placeholder="글쓴이">
+					<input type="text" name="boardWriter" 
+						value="${board.boardWriter}" readonly>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<textarea rows="5" cols="50" placeholder="글내용"
-						name="boardContent"></textarea>
+					<textarea rows="5" cols="50" placeholder="글내용" readonly
+						name="boardContent">${board.boardContent}</textarea>
 				</td>
 			</tr>	
 			<tr>
 				<td>
-					<input type="submit" value="등록">
-					<input type="reset" value="취소">
+					<a href="/board/list"><button>목록</button></a>
 				</td>
 			</tr>
 		</table>
-		</form>
 	</div>
 </body>
 </html>
