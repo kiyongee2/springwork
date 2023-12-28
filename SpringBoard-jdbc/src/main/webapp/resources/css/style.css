@@ -13,3 +13,7 @@ input[type="submit"], input[type="reset"]{padding: 8px;}
 .tbl_write input[type="text"]{width: 590px; height: 20px; padding:4px}
 .tbl_write textarea{width: 590px; height: 300px; padding:4px}
 .tbl_write tr:last-child td{text-align: center;}
+
+/* 글 목록 */
+.tbl_list{width: 600px; margin: 30px auto; border-collapse: collapse;}
+.tbl_list th, td{border: 1px solid #ccc; padding: 10px;}

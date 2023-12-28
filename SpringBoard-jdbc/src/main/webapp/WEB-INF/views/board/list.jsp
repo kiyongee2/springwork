@@ -11,7 +11,11 @@
 <body>
 	<div id="content">
 		<h2>글 목록</h2>
-		<table>
+		<div>
+			${sessionId}님 환영합니다.&nbsp;&nbsp;&nbsp;
+			<a href="/user/logout">로그아웃</a>
+		</div>
+		<table class="tbl_list">
 			<thead>
 				<tr>
 					<th>번호</th><th>제목</th><th>글쓴이</th><th>작성일</th>
