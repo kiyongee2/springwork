@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 @ContextConfiguration("file:src\\main\\webapp\\WEB-INF\\spring\\root-context.xml")
 public class MyBatisTest {
 	//try ~ resource문 - close()를 사용하지 않음
-	
 	@Autowired
 	private SqlSessionFactory sql;
 	
