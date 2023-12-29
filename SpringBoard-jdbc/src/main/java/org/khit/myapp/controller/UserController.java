@@ -6,6 +6,7 @@ import org.khit.myapp.dto.UserDTO;
 import org.khit.myapp.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +29,7 @@ public class UserController {
 	
 	//회원 가입 처리
 	@PostMapping("/join")
-	public String join(UserDTO userDTO) {
+	public String join(@ModelAttribute UserDTO userDTO) {
 		log.info("userDTO=" + userDTO);
 		userService.save(userDTO);
 		return "redirect:/";  //인덱스로 이동
@@ -44,7 +45,7 @@ public class UserController {
 	//성공했을때(true) - 아이디로 세션 발급, 글목록 페이지로 이동
 	//실패했을때(false) - 로그인 페이지로 이동
 	@PostMapping("/login")
-	public String login(UserDTO userDTO,
+	public String login(@ModelAttribute UserDTO userDTO,
 			HttpSession session) { //userDTO(폼에 입력된 아이디와 비번)
 		boolean loginResult = userService.login(userDTO);
 		if(loginResult) {
