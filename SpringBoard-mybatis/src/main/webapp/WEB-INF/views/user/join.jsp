@@ -7,7 +7,8 @@
 <title>회원 가입</title>
 </head>
 <body>
-	<div id="content">
+	<jsp:include page="../layout/header.jsp" />
+	<div id="container">
 		<h2>회원 가입</h2>
 		<form action="/user/join" method="post">
 		<table class="tbl_join">

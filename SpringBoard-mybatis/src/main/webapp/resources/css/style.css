@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* 공통 스타일 */
+*{margin: 0; padding: 0;}
+#container{width: 1200px; margin: 30px auto 100px;}
+ul li{list-style: none;}
+a{text-decoration: none;}
+
+/* header 스타일 */
+header{height: 80px; background: #0077cc;}
+header #logo{width: 250px; float: left; line-height: 80px;}
+#logo h1 a{color: greenyellow; padding-left: 24px; font-style: italic;}
+#logo h1 a:hover{color: #eee;}
+header nav{width: 900px; float: right;}
+#topMenu{line-height: 80px; padding-left: 150px;}
+#topMenu li{float: left; margin: 0 20px;}
+#topMenu li a{color: #eee; padding: 0 20px;}
+#topMenu li a:hover{color: #444;}
+
+/* main 스타일 */
+#container h1{color: blue; font-style: italic; 
+	padding: 20px 60px; text-align: center}
+.main_img{text-align: center}
+.main_img img{border-radius: 5px;}
