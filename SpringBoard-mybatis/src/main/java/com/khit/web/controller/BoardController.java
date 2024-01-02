@@ -1,9 +1,13 @@
 package com.khit.web.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.khit.web.dto.BoardDTO;
 import com.khit.web.service.BoardService;
@@ -34,8 +38,22 @@ public class BoardController {
 	}
 	
 	//글목록
+	// /board/
 	@GetMapping("/")
-	public String getList() {
+	public String getList(Model model) {
+		List<BoardDTO> boardDTOList = boardService.findAll();
+		model.addAttribute("boardList", boardDTOList);
 		return "board/boardlist";
 	}
+	
+	//글 상세보기
+	// /board?id=
+	@GetMapping
+	public String getBoard(@RequestParam("id") Long id,
+			Model model) {
+		BoardDTO boardDTO = boardService.findById(id);
+		model.addAttribute("board", boardDTO);
+		return "/board/detail";  //detail.jsp
+	}
+	
 }
