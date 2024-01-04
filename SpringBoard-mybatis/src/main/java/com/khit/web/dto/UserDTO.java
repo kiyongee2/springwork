@@ -15,8 +15,8 @@ import lombok.ToString;
 @Data
 public class UserDTO {
 	//필드
-	private Long id;
-	private String userId;
+	private Long id;        //회원 번호
+	private String userId;  //회원 아이디(세션)
 	private String userPasswd;
 	private String userName;
 	private String userAge;

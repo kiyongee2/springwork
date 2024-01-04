@@ -37,7 +37,7 @@ public class UserController {
 	public String join(@ModelAttribute UserDTO userDTO ) {
 		log.info("userDTO:" + userDTO);
 		userService.insert(userDTO);
-		return "redirect:/"; //http://localhost:8080/
+		return "redirect:/user/login"; //http://localhost:8080/
 	}
 	
 	//회원 목록
@@ -72,7 +72,7 @@ public class UserController {
 		UserDTO loginUser = userService.login(userDTO);
 		if(loginUser != null) {
 			session.setAttribute("sessionId", userDTO.getUserId());
-			return "redirect:/";
+			return "redirect:/";  //인덱스로 이동
 		}else {
 			return "/user/login";
 		}
@@ -83,5 +83,28 @@ public class UserController {
 	public String logout(HttpSession session) {
 		session.invalidate(); //세션 삭제
 		return "redirect:/";
+	}
+	
+	// /user/update?id=
+	@GetMapping("/update")
+	public String update(Model model,
+			HttpSession session) {
+		//수정할 회원 가져오기(세션 이름으로 가져오기)
+		String userId = (String)session.getAttribute("sessionId");
+		UserDTO userDTO = userService.findByUserId(userId);
+		model.addAttribute("user", userDTO);
+		return "/user/userupdate";
+	}
+	
+	@PostMapping("/update")
+	public String update(@ModelAttribute UserDTO userDTO) {
+		userService.update(userDTO);
+		return "redirect:/user/update?id=" + userDTO.getId();
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("id") Long id) {
+		userService.delete(id);
+		return "redirect:/user/";  //강제로 페이지 이동
 	}
 }

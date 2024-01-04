@@ -9,10 +9,13 @@
 <body>
 	<jsp:include page="layout/header.jsp" />
     <div id="container">
+      <section id="main">
 		<h1>khit 홈입니다.</h1>
 		<div class="main_img">
 			<img src="/resources/images/bear.jpg" alt="곰인형">
 		</div>
+	  </section>
 	</div>
+	<jsp:include page="layout/footer.jsp" />
 </body>
 </html>

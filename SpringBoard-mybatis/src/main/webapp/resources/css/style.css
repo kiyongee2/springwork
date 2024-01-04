@@ -18,7 +18,62 @@ header nav{width: 900px; float: right;}
 #topMenu li a:hover{color: #444;}
 
 /* main 스타일 */
-#container h1{color: blue; font-style: italic; 
+#main{width: 1000px; margin: 40px auto;}
+#main h1{color: blue; font-style: italic; 
 	padding: 20px 60px; text-align: center}
-.main_img{text-align: center}
-.main_img img{border-radius: 5px;}
+#main .main_img{text-align: center}
+#main .main_img img{border-radius: 5px;}
+
+/* footer 스타일 */
+footer{height: 80px; border-top: 2px solid #222; clear: both;}
+#bottomMenu{margin: 10px 20px;}
+#bottomMenu li{float: left; margin: 10px 0; padding: 0 10px;
+	border-right: 1.5px solid #ccc;}
+#bottomMenu li a{color: #444;}
+#bottomMenu li:last-child{border: none;}
+
+/* 회원 가입 스타일 */
+#join{width: 460px; margin: 20px auto;}
+#join form{margin: 20px auto;}
+form ul li{margin: 20px;}
+#join .button{width: 100%; padding: 10px 0;}
+form label{width: 120px; float: left; padding-left: 20px;}
+form input{padding: 5px;}
+
+/* 회원 목록 스타일 */
+#memberlist{width: 700px; margin: 20px auto;}
+#memberlist .logout{text-align: right;}
+#memberlist table{width: 700px; margin: 20px auto;}
+#memberlist table, th, td{border: 1px solid #ccc; 
+  border-collapse: collapse; text-align: center;}
+table th, td{padding: 10px;}
+table thead{background: #eee;}
+
+/* 회원 정보 스타일 */
+#detail{width: 460px; margin: 20px auto;}
+#detail table{width: 460px; margin: 20px auto;}
+#detail table, th, td{border: 1px solid #ccc; 
+  border-collapse: collapse; text-align: center;}
+table th, td{padding: 10px;}
+#detail button{padding: 5px;}
+
+/* login 스타일 */
+#login {width: 400px; margin: 30px auto 100px;}
+#login form{margin: 30px auto;}
+#login form ul li{margin: 30px;}
+#login .error{color: #e00; margin-top: 16px; font-size: 0.9em}
+#login .button{width: 100%; padding: 10px 0;}
+
+/* 게시글 목록 스타일 */
+#boardlist{width: 700px; margin: 20px auto;}
+#boardlist table{width: 700px; margin: 20px auto;}
+#boardlist table, th, td{border: 1px solid #ccc; 
+  border-collapse: collapse; text-align: center;}
+table th, td{padding: 8px;}
+table thead{background: #eee;}
+table input{width: 200px; height: 25px; padding: 3px;}
+#boardlist button{padding: 10px;}
+
+
+
+
