@@ -111,9 +111,10 @@ public class UserController {
 	
 	//아이디 중복 검사
 	@PostMapping("/checkuserid")
-	public @ResponseBody String userCheckUserId(
+	public @ResponseBody String checkUserId(
 			@RequestParam("userId") String userId) {
 		log.info(userId);
-		return null;
+		String checkResult = userService.checkUserId(userId);
+		return checkResult;  //"usable" or "not_usable" 리턴
 	}
 }

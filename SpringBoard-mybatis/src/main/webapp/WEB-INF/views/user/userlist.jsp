@@ -32,7 +32,8 @@
 					<td>${user.userName}</td>
 					<td>${user.userAge}</td>
 					<td>
-						<a href="/user/delete?id=${user.id}">
+						<a href="/user/delete?id=${user.id}"
+						   onclick="return confirm('정말로 삭제하시겠습니까?')">
 							<button>삭제</button>
 						</a>
 					</td>

@@ -12,4 +12,10 @@ public interface BoardMapper {
 
 	BoardDTO findById(Long id); //글 상세보기
 
+	void updateHit(Long id);  //조회수 증가
+
+	void delete(Long id);     //글 삭제
+
+	void update(BoardDTO boardDTO);
+
 }

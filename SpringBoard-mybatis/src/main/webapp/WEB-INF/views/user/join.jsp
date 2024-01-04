@@ -95,21 +95,31 @@
   let checkId = function(){
 	  //alert("중복검사");
 	  let userId = document.getElementById("userId").value;
+	  let checkResult = document.getElementById("check-result");
 	  console.log(userId);
 	  
-	  $.ajax({
-		  //요청방식: post, url: /user/checkuserid, 데이터: userId
-		  type: "post",
-		  url: "/user/checkuserid",
-		  data: {"userId": userId},
-		  //서버에서 응답 - 성공과 실패
-		  success: function(response){
-			  console.log(response);
-		  },
-		  error: function(error){
-			  console.log("에러발생", error);
-		  }
-	  });
+	  if(userId != ""){
+		  $.ajax({
+			  //요청방식: post, url: /user/checkuserid, 데이터: userId
+			  type: "post",
+			  url: "/user/checkuserid",
+			  data: {"userId": userId},
+			  //서버에서 응답 - 성공과 실패
+			  success: function(response){
+				  console.log(response);
+				  if(response == "usable"){
+					  checkResult.innerHTML = "사용 가능한 아이디입니다.";
+					  checkResult.style.color = "blue";
+				  }else{
+					  checkResult.innerHTML = "이미 사용 중인 아이디입니다.";
+					  checkResult.style.color = "red";
+				  }
+			  },
+			  error: function(error){
+				  console.log("에러발생", error);
+			  }
+		  });
+	  }
   }
 </script>
 </body>

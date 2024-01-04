@@ -45,9 +45,9 @@ form input{padding: 5px;}
 #memberlist .logout{text-align: right;}
 #memberlist table{width: 700px; margin: 20px auto;}
 #memberlist table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
+  border-collapse: collapse; padding: 10px;}
 table thead{background: #eee;}
+table tbody td{text-align: center;}
 
 /* 회원 정보 스타일 */
 #detail{width: 460px; margin: 20px auto;}
@@ -66,14 +66,42 @@ table th, td{padding: 10px;}
 
 /* 게시글 목록 스타일 */
 #boardlist{width: 700px; margin: 20px auto;}
-#boardlist table{width: 700px; margin: 20px auto;}
+#boardlist table{width: 700px; margin: 20px auto; }
 #boardlist table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 8px;}
-table thead{background: #eee;}
-table input{width: 200px; height: 25px; padding: 3px;}
+  border-collapse: collapse;  padding: 8px;}
+#boardlist table thead{background: #eee;}
+#boardlist table tbody td{text-align: center;}
+#boardlist table tbody td:nth-child(2){text-align: left;}
+#boardlist table input{width: 200px; height: 25px; padding: 3px;}
 #boardlist button{padding: 10px;}
 
+/* 글쓰기 스타일*/
+#writeform{width: 550px; margin: 20px auto;}
+#writeform table{width: 550px; margin: 20px auto;}
+#writeform table, th, td{border: 1px solid #ccc; 
+  border-collapse: collapse; text-align: center;}
+#writeform table th, td{padding: 10px;}
+#writeform table thead{background: #eee;}
+#writeform input{width: 540px; height: 25px; padding: 5px;}
+#writeform textarea{width: 540px; height: 300px; padding: 5px;}
+#writeform button{width: 80px; padding: 5px;}
+
+/* 글 상세보기 스타일 */
+#board_detail{width: 550px; margin: 20px auto;}
+#board_detail table{width: 550px; margin: 20px auto;}
+#board_detail table, th, td{border: 1px solid #ccc; 
+  border-collapse: collapse; padding: 10px;}
+#board_detail table tbody td{text-align: left;}
+#board_detail table tr:last-child td{text-align: center;}
+#board_detail input{width: 540px; height: 25px; padding: 5px;}
+#board_detail textarea{width: 540px; height: 260px; padding: 5px;}
+#board_detail button{padding: 5px;}
+
+/* 댓글 영역 스타일 */
+#replyform textarea{height: 100px; margin-top: 10px;}
+#replyform input[type="submit"]{
+	width: 60px; height: 30px;
+}
 
 
 
