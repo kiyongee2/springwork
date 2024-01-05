@@ -2,6 +2,7 @@ package com.khit.web.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,18 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.khit.web.dto.BoardDTO;
+import com.khit.web.dto.PageDTO;
+import com.khit.web.dto.ReplyDTO;
 import com.khit.web.service.BoardService;
+import com.khit.web.service.ReplyService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@AllArgsConstructor  //생성자 주입
+//@AllArgsConstructor  //생성자 주입
 @Slf4j
 @RequestMapping("/board")
 @Controller
 public class BoardController {
 	
+	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private ReplyService replyService;
 	
 	//글쓰기 페이지
 	@GetMapping("/write")
@@ -35,7 +43,7 @@ public class BoardController {
 	public String write(BoardDTO boardDTO) {
 		log.info("boardDTO=" + boardDTO);
 		boardService.insert(boardDTO);
-		return "redirect:/board/"; //boardlist.jsp로 이동
+		return "redirect:/board/paging"; //boardlist.jsp로 이동
 	}
 	
 	//글목록
@@ -47,16 +55,45 @@ public class BoardController {
 		return "board/boardlist";
 	}
 	
+	//글목록(페이지처리)
+	// /board/paging?page=2
+	// @RequestParam(required=true/false) fasle는 필수 아님
+	@GetMapping("/paging")
+	public String getPageList(
+			@RequestParam(value="page", required=false,
+			  defaultValue="1") int page,
+			Model model) {
+		log.info("page=" + page);
+		
+		//페이지와 글 개수를 구현된 목록 보기
+		List<BoardDTO> pagingList = boardService.pagingList(page);
+		log.info("pagingList=" + pagingList);
+		model.addAttribute("boardList", pagingList);
+		
+		//화면 하단 구현
+		PageDTO pageDTO = boardService.pagingParam(page);
+		model.addAttribute("paging", pageDTO);
+		
+		return "/board/pagelist";
+	}
+	
 	//글 상세보기
 	// /board?id=
 	@GetMapping
 	public String getBoard(@RequestParam("id") Long id,
+			@RequestParam(value="page", required=false,
+			  defaultValue="1") int page,
 			Model model) {
 		//조회수 증가
 		boardService.updateHit(id);
 		//글 상세보기
 		BoardDTO boardDTO = boardService.findById(id);
+		//댓글 목록 보기
+		List<ReplyDTO> replyDTOList = replyService.getReplyList(id);
+		
 		model.addAttribute("board", boardDTO);
+		model.addAttribute("page", page);
+		model.addAttribute("replyList", replyDTOList);
 		return "/board/detail";  //detail.jsp
 	}
 	

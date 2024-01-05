@@ -35,4 +35,12 @@
 	    where id=#{id}
 	</update>
 	
+	<select id="pagingList" resultType="com.khit.web.dto.BoardDTO">
+	   select * from boards order by id desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="boardCount" resultType="Integer">
+	   select count(id) from boards
+	</select>
+	
 </mapper>
