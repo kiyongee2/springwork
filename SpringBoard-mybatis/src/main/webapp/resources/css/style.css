@@ -74,7 +74,9 @@ table th, td{padding: 10px;}
 #boardlist table tbody td:nth-child(2){text-align: left;}
 #boardlist table input{width: 200px; height: 25px; padding: 3px;}
 #boardlist button{padding: 10px;}
-
+#boardlist .pagination{text-align: center;}
+.pagination a{margin: 5px; color: black;}
+.pagination .current_page{font-weight: bold; color: #00f;}
 /* 글쓰기 스타일*/
 #writeform{width: 550px; margin: 20px auto;}
 #writeform table{width: 550px; margin: 20px auto;}

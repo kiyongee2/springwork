@@ -75,7 +75,7 @@ public class BoardServiceImpl implements BoardService{
 		//전체 페이지 개수 - 올림(Math.ceil) 43/10=4.3 -> 5.3 -> 5(int)
 		int maxPage = (int)(Math.ceil((double)totalRow/pageLimit));
 		//하단에 보여줄 시작 페이지값 계산 - 예)5개씩 보임(1, 6, 11, 16...)
-		int startPage = (((int)(Math.ceil((double)page/blockLimit)))-1) * blockLimit + 1;
+		int startPage = ((int)(Math.ceil((double)page/blockLimit))-1) * blockLimit + 1;
 		//하단에 보여줄 마지막 페이지값 계산(5, 10, 15, 20)
 		int endPage = startPage + blockLimit - 1;
 		if(endPage > maxPage)
