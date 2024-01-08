@@ -23,8 +23,8 @@ public class TodoServiceTest {
 	public void testInsert() {
 		//폼에 입력된 자료로 간주해서 db에 저장
 		TodoDTO todoDTO = TodoDTO.builder()
-				.title("여행가기")
-				.writer("travel")
+				.title("취업하기")
+				.writer("이가인")
 				.build();
 		
 		todoService.insert(todoDTO);
