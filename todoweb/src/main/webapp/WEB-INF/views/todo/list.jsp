@@ -27,7 +27,7 @@
 				    <c:forEach items="${todoList}" var="todo">
 				     <tr>
 				     	<td>${todo.tno}</td>
-				     	<td>${todo.title}</td>
+				     	<td><a href="/todo?tno=${todo.tno}">${todo.title}</a></td>
 				     	<td>${todo.writer}</td>
 				     </tr>
 				    </c:forEach>
