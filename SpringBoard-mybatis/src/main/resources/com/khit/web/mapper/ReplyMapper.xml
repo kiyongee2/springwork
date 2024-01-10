@@ -11,7 +11,7 @@
   </insert>
 
   <select id="getReplyList" resultType="com.khit.web.dto.ReplyDTO">
-  	select * from reply where boardid = #{boardId}
+  	select * from reply where boardid = #{boardId} order by id desc
   </select>
   
   <delete id="delete">
