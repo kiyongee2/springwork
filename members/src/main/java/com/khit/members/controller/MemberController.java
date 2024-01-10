@@ -44,13 +44,18 @@ public class MemberController {
 	public String login(@ModelAttribute MemberDTO memberDTO,
 			HttpSession session) {
 		MemberDTO loginMember = memberService.login(memberDTO);
-		if(loginMember != null) {
+		if(loginMember != null) { //로그인된 객체가 있으면 세션 발급
 			session.setAttribute("sessionEmail", memberDTO.getEmail());
 			return "main"; 
 		}else {
 			return "/member/login";
 		}
-		
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate(); //모든 세션 삭제
+		return "redirect:/";
 	}
 	
 }

@@ -9,4 +9,9 @@
    	  insert into t_member (email, password, name, age)
    	  values (#{email}, #{password}, #{name}, #{age})
    </insert>
+   
+   <select id="login" resultType="member">
+   	 select * from t_member 
+   	 where email = #{email} and password = #{password}
+   </select>
  </mapper>
