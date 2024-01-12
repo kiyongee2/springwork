@@ -2,8 +2,10 @@ package com.khit.todoweb.dto;
 
 import java.util.Arrays;
 
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 public class PageRequestDTO {
 	private int page = 1;    //페이지 번호

@@ -13,7 +13,7 @@
     <div class="content">
 		<h2>${sessionEmail}님 환영합니다.</h2>
 		<h4>
-			<button type="button" onclick="update()">내정보 수정</button>&nbsp;  
+			<button type="button" onclick="updateFn()">내정보 수정</button>&nbsp;  
 			<button type="button" onclick="logout()">로그아웃</button>
 			<button type="button" onclick="index()">Home</button>
 		</h4>
@@ -25,6 +25,10 @@
   
   let logout = function(){
 	  location.href = "/member/logout";
+  }
+  
+  let updateFn = function(){
+	  location.href = "/member/update";
   }
 
 </script>
