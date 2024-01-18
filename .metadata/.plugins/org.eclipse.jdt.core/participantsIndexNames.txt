@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+C:\springworks\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2806564625.index
+\BoardWeb\src\main\java
 C:\springworks\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\898244498.index
 \SpringBoard-mybatis\src\main\java
 C:\springworks\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3460615222.index
